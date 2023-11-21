@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+# omniauth for flickr
+gem "omniauth-flickr", "~> 0.0.20"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
