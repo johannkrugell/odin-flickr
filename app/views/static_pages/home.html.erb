@@ -1,0 +1,29 @@
+<h1>Home</h1>
+<p>Add your Flickr ID to get pictures</p>
+
+<div>
+  <div>
+    <%= form_with(url: "/", local: true, method: "get") do |f| %>
+      <p>Enter a flickr ID to see photos</p>
+      <div>
+        <%= f.text_field :user_id, class: "form-control", placeholder: "User Id", required: true %>
+        <div>
+          <%= f.submit "Search" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+  <% unless @photos.size.zero? %>
+    <div>
+      <% @photos.each do |p| %>
+        <div>
+          <%= link_to(image_tag(Flickr.url_q(p)), Flickr.url_photopage(p)) %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h4>This user has no photos</h4>
+  <% end %>
+
+

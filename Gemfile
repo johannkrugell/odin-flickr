@@ -68,9 +68,11 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
 end
 
 # omniauth for flickr
 gem "omniauth-flickr", "~> 0.0.20"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+# flickr
+gem 'flickr', '~> 2.0', '>= 2.0.2'
